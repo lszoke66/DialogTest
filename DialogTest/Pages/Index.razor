@@ -19,8 +19,11 @@
 
     private async Task OnBtnClick()
     {
-        //bool isConfirm = await DialogService.ConfirmAsync("Are you sure you want to permanently delete these items?", "Delete Multiple Items");
-        DialogService.AlertAsync("Minta", "Cím");
+        bool isConfirm = await DialogService.ConfirmAsync("Are you sure you want to permanently delete these items?", "Delete Multiple Items");
+        if(isConfirm)
+        {
+            
+        }
     }
    }
 
