@@ -19,10 +19,22 @@
 
     private async Task OnBtnClick()
     {
-        bool isConfirm = await DialogService.ConfirmAsync("Are you sure you want to permanently delete these items?", "Delete Multiple Items");
+
+        DialogOptions op=new();
+
+
+        
+        op.AllowDragging = true;
+        
+        op.CloseOnEscape = true;
+        op.ShowCloseIcon = true;
+       
+        
+
+        bool isConfirm = await DialogService.ConfirmAsync("Are you sure you want to permanently delete these items?", "Delete Multiple Items",op);
         if(isConfirm)
         {
-            
+            await DialogService.AlertAsync("Siker", "na",op);
         }
     }
    }
